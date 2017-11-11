@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewFlipper = findViewById(R.id.viewflipper);
+        viewFlipper.setInAnimation(this, R.anim.in_from_right);
+        viewFlipper.setOutAnimation(this, R.anim.out_to_left);
+        viewFlipper.setFlipInterval(2000);
+        viewFlipper.startFlipping();
     }
 
     public boolean onTouchEvent(MotionEvent touchevent) {
@@ -52,6 +56,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            viewFlipper.setInAnimation(this, R.anim.in_from_right);
+            viewFlipper.setOutAnimation(this, R.anim.out_to_left);
+            viewFlipper.setFlipInterval(2000);
+            viewFlipper.startFlipping();
+        }
+
         return false;
     }
 }

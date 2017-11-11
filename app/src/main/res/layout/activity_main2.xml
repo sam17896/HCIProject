@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context="com.example.ahsan.hciproject.Main2Activity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pileLayout"
+        android:layout_centerHorizontal="true"
+        android:text="Pile Layout"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewFlipper"
+        android:layout_below="@+id/pileLayout"
+        android:layout_centerHorizontal="true"
+        android:text="View Flipper"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/swipeLayout"
+        android:layout_below="@id/viewFlipper"
+        android:layout_centerHorizontal="true"
+        android:text="swipe layout"/>
+
+
+</RelativeLayout>
