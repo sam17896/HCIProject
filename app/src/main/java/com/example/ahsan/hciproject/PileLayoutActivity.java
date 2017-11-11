@@ -47,7 +47,7 @@ public class PileLayoutActivity extends AppCompatActivity {
                     viewHolder.imageView = view.findViewById(R.id.imageView);
                     view.setTag(viewHolder);
                 }
-                Glide.with(PileLayoutActivity.this).load(dataList.get(position).getCoverImageUrl()).into(viewHolder.imageView);
+                Glide.with(getApplicationContext()).load(dataList.get(position).getCoverImageUrl()).into(viewHolder.imageView);
             }
 
             @Override

@@ -13,27 +13,27 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/a" />
+            android:src="@drawable/game_of_thrones" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/b" />
+            android:src="@drawable/nemo" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/c" />
+            android:src="@drawable/hannibal" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/d" />
+            android:src="@drawable/house" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/e" />
+            android:src="@drawable/toystory" />
     </ViewFlipper>
 
     <GridView
