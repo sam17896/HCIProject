@@ -1,4 +1,4 @@
-package com.example.ahsan.hciproject;
+package com.example.ahsan.hciproject.Activity;
 
         import android.support.v4.view.ViewPager;
         import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ package com.example.ahsan.hciproject;
         import android.view.MotionEvent;
         import android.view.ViewParent;
         import android.widget.ViewFlipper;
+
+        import com.example.ahsan.hciproject.R;
 
 public class MainActivity extends AppCompatActivity {
     private ViewFlipper viewFlipper;

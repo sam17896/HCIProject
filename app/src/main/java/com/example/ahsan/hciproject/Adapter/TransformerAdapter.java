@@ -1,4 +1,4 @@
-package com.example.ahsan.hciproject;
+package com.example.ahsan.hciproject.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.daimajia.slider.library.SliderLayout;
+import com.example.ahsan.hciproject.R;
 
 /**
  * Created by daimajia on 14-5-29.

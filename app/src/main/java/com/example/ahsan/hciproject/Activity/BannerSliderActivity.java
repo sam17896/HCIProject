@@ -1,4 +1,4 @@
-package com.example.ahsan.hciproject;
+package com.example.ahsan.hciproject.Activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,10 +20,11 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.example.ahsan.hciproject.util.ChildAnimationExample;
+import com.example.ahsan.hciproject.R;
+import com.example.ahsan.hciproject.Adapter.TransformerAdapter;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 public class BannerSliderActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener{

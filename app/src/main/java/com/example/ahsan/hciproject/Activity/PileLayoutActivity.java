@@ -1,4 +1,4 @@
-package com.example.ahsan.hciproject;
+package com.example.ahsan.hciproject.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.ahsan.hciproject.R;
 import com.example.ahsan.hciproject.entity.ItemEntity;
 
 import org.json.JSONArray;

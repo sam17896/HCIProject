@@ -1,4 +1,4 @@
-package com.example.ahsan.hciproject;
+package com.example.ahsan.hciproject.Adapter;
 
 import android.content.Context;
 import android.media.Image;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextClock;
 import android.widget.TextView;
+
+import com.example.ahsan.hciproject.R;
 
 /**
  * Created by Sohail Arshad on 11/10/2017.

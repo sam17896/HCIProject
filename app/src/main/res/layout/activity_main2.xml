@@ -7,7 +7,7 @@
     android:layout_margin="10dp"
     android:layout_gravity="center"
     android:gravity="center"
-    tools:context="com.example.ahsan.hciproject.Main2Activity">
+    tools:context="com.example.ahsan.hciproject.Activity.Main2Activity">
 
     <Button
         android:layout_width="match_parent"
