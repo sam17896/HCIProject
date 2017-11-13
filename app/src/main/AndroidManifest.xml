@@ -16,19 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.Main2Activity">
+        </activity>
+        <activity android:name=".Activity.PileLayoutActivity" />
+        <activity android:name=".Activity.BannerSliderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.PileLayoutActivity" />
-        <activity android:name=".Activity.BannerSliderActivity"></activity>
     </application>
 
 </manifest>
