@@ -20,9 +20,11 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.example.ahsan.hciproject.util.BottomNavigationViewHelper;
 import com.example.ahsan.hciproject.util.ChildAnimationExample;
 import com.example.ahsan.hciproject.R;
 import com.example.ahsan.hciproject.Adapter.TransformerAdapter;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import java.util.HashMap;
 
@@ -30,13 +32,14 @@ import java.util.HashMap;
 public class BannerSliderActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener{
 
     private SliderLayout mDemoSlider;
+    private static final int ACTIVITY_NO = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner_slider);
         mDemoSlider = findViewById(R.id.slider);
-
+        setupBottomNavigationView();
         HashMap<String,String> url_maps = new HashMap<String, String>();
         url_maps.put("Hannibal", "https://static.pexels.com/photos/461198/pexels-photo-461198.jpeg");
         url_maps.put("Big Bang Theory", "https://static.pexels.com/photos/76093/pexels-photo-76093.jpeg");
@@ -109,4 +112,15 @@ public class BannerSliderActivity extends AppCompatActivity implements BaseSlide
 
     @Override
     public void onPageScrollStateChanged(int state) {}
+
+    private void setupBottomNavigationView(){
+        BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottonNavigationBar);
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        BottomNavigationViewHelper.enableNavigation(this, bottomNavigationViewEx);
+
+        Menu menu = bottomNavigationViewEx.getMenu();
+        MenuItem menuItem = menu.getItem(ACTIVITY_NO);
+        menuItem.setChecked(true);
+
+    }
 }

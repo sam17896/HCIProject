@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 
 import com.example.ahsan.hciproject.Activity.BannerSliderActivity;
+import com.example.ahsan.hciproject.R;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import android.content.Context;
 import android.content.Intent;
