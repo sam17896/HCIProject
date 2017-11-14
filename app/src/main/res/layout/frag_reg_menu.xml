@@ -1,6 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rellayout3"
+    android:layout_below="@+id/linearlayout2"
+    android:layout_marginBottom="50dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.constraint.ConstraintLayout>
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridView"
+        android:numColumns="2"
+        android:verticalSpacing="1dp"
+        android:horizontalSpacing="1dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center">
+
+    </GridView>
+
+</RelativeLayout>

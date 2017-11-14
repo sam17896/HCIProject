@@ -1,45 +1,112 @@
-<LinearLayout android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="2"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <ViewFlipper
-        android:id="@+id/viewflipper"
-        android:layout_width="wrap_content"
-        android:layout_weight="1"
-        android:layout_height="0dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/game_of_thrones" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/nemo" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/hannibal" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/house" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/toystory" />
-    </ViewFlipper>
-
-    <GridView
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.ahsan.hciproject.Activity.BannerSliderActivity">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </GridView>
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2">
 
-</LinearLayout>
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                custom:pager_animation="Accordion"
+                custom:auto_cycle="true"
+                custom:indicator_visibility="visible"
+                custom:pager_animation_span="1100"
+                android:layout_height="match_parent"/>
+
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id="@+id/custom_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                custom:selected_color="#0095BF"
+                custom:unselected_color="#55333333"
+                custom:selected_drawable="@drawable/bird"
+                custom:shape="oval"
+                custom:selected_padding_left="5dp"
+                custom:selected_padding_right="5dp"
+                custom:unselected_padding_left="5dp"
+                custom:unselected_padding_right="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                custom:selected_width="6dp"
+                custom:selected_height="6dp"
+                custom:unselected_width="6dp"
+                custom:unselected_height="6dp"
+                android:layout_marginBottom="20dp"/>
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id="@+id/custom_indicator2"
+                style="@style/AndroidImageSlider_Corner_Oval_Orange"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Menu"
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Track Your Order"
+                    />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bottonNavigationBar"
+            android:background="@drawable/while_grey_border_top"
+            app:menu="@menu/bottom_navigation_menu">
+
+        </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

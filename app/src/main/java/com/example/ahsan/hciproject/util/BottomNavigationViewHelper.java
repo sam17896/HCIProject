@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
 
 import com.example.ahsan.hciproject.Activity.BannerSliderActivity;
+import com.example.ahsan.hciproject.Activity.MenuActivity;
 import com.example.ahsan.hciproject.R;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import android.content.Context;
@@ -31,25 +32,4 @@ public class BottomNavigationViewHelper {
         bottomNavigationViewEx.setTextVisibility(false);
     }
 
-    public static void enableNavigation(final Context context, BottomNavigationViewEx viewEx){
-        viewEx.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Preference preference = new Preference(context);
-                switch (item.getItemId()) {
-                    case R.id.ic_house:
-                        if (preference.getCurrNavigation().equals("Home")) {
-
-                        } else {
-                            Intent intent1 = new Intent(context, BannerSliderActivity.class);
-                            context.startActivity(intent1);
-                            preference.setCurrNavigation("Home");
-                        }
-                        break;
-                }
-
-                return false;
-            }
-        });
-    }
 }

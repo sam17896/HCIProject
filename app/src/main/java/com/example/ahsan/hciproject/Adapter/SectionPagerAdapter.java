@@ -8,8 +8,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.ahsan.hciproject.Fragment.BreakfastMenu;
 import com.example.ahsan.hciproject.Fragment.RegularMenu;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class SectionPagerAdapter extends FragmentPagerAdapter {
+
+    private final List<Fragment> mFragmentList = new ArrayList<>();
 
     public SectionPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -17,28 +22,16 @@ public class SectionPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
-        switch (position) {
-            case 0:
-                return new RegularMenu();
-            case 1:
-                return new BreakfastMenu();
-        }
-        return null;
+        return mFragmentList.get(position);
     }
 
-    @Override public int getCount() {
-        return 2;
-    }
 
     @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "Regular Menu";
-            case 1:
-                return "BreakFast Meny";
-        }
-        return null;
+    public int getCount() {
+        return mFragmentList.size();
+    }
+
+    public void addFragment(Fragment fragment){
+        mFragmentList.add(fragment);
     }
 }
