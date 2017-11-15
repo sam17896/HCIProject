@@ -9,8 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ahsan.hciproject.R;
+import com.example.ahsan.hciproject.entity.Deal;
 import com.example.ahsan.hciproject.util.SqaureImageView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -22,25 +25,26 @@ import java.util.ArrayList;
  * Created by AHSAN on 8/2/2017.
  */
 
-public class GridImageAdapter extends ArrayAdapter<String> {
+public class GridImageAdapter extends ArrayAdapter<Deal> {
     private Context mContext;
     private LayoutInflater mInflater;
     private int layoutResource;
     private String mAppend;
-    private ArrayList<String> imgURLs;
+    private ArrayList<Deal> arrayList;
 
-    public GridImageAdapter(Context context, int layoutResource, String append, ArrayList<String> imgURLs) {
-        super(context, layoutResource, imgURLs);
+    public GridImageAdapter(Context context, int layoutResource, String append, ArrayList<Deal> arrayList) {
+        super(context,layoutResource,arrayList);
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mContext = context;
         this.layoutResource = layoutResource;
         mAppend = append;
-        this.imgURLs = imgURLs;
+        this.arrayList = arrayList;
     }
 
     private static class ViewHolder{
         SqaureImageView image;
         ProgressBar mProgressBar;
+        TextView name;
     }
 
     @NonNull
@@ -56,6 +60,7 @@ public class GridImageAdapter extends ArrayAdapter<String> {
             holder = new ViewHolder();
             holder.mProgressBar = (ProgressBar) convertView.findViewById(R.id.gridProgressBar);
             holder.image = (SqaureImageView) convertView.findViewById(R.id.gridImageView);
+            holder.name = convertView.findViewById(R.id.name);
 
             convertView.setTag(holder);
         }
@@ -63,11 +68,13 @@ public class GridImageAdapter extends ArrayAdapter<String> {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        String imgURL = getItem(position);
+        Deal deal = arrayList.get(position);
 
         ImageLoader imageLoader = ImageLoader.getInstance();
+        holder.name.setText(deal.getName());
+        Toast.makeText(mContext, deal.getName(), Toast.LENGTH_SHORT).show();
 
-        imageLoader.displayImage(mAppend + imgURL, holder.image, new ImageLoadingListener() {
+        imageLoader.displayImage(mAppend + deal.getImageUrl(), holder.image, new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
                 if(holder.mProgressBar != null){

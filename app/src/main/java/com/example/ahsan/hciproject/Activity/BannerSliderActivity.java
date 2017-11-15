@@ -68,10 +68,10 @@ public class BannerSliderActivity extends AppCompatActivity{
                         menuItem.setChecked(true);
                         return true;
                     case R.id.ic_search:
-                        setTitle("Home");
+                        setTitle("Menu");
                         Fragment Menu =  new com.example.ahsan.hciproject.Fragment.Menu();
                         android.support.v4.app.FragmentTransaction fragmentTransaction1 =  getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction1.replace(R.id.fra, Menu,"Home").commit();
+                        fragmentTransaction1.replace(R.id.fra, Menu,"Menu").commit();
 
                         Menu menu1 = bottomNavigationViewEx.getMenu();
                         MenuItem menuItem1 =  menu1.getItem(1);

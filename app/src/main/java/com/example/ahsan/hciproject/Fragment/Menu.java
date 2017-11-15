@@ -34,7 +34,7 @@ public class Menu extends Fragment {
 
 
     private void setUpViewPager(View view){
-        SectionPagerAdapter adapter = new SectionPagerAdapter(getActivity().getSupportFragmentManager());
+        SectionPagerAdapter adapter = new SectionPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new BreakfastMenu());
         adapter.addFragment(new RegularMenu());
 

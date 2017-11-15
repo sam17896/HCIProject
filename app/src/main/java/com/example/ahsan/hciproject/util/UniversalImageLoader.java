@@ -30,9 +30,6 @@ public class UniversalImageLoader {
 
     public ImageLoaderConfiguration getConfig(){
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .showImageOnLoading(defaultImaage)
-                .showImageForEmptyUri(defaultImaage)
-                .showImageOnFail(defaultImaage)
                 .cacheOnDisk(true).cacheInMemory(true)
                 .cacheOnDisk(true).resetViewBeforeLoading(true)
                 .imageScaleType(ImageScaleType.EXACTLY)
