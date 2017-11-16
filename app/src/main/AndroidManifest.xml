@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MenuActivity" />
-        <activity android:name=".Activity.DealsActivity"></activity>
+        <activity android:name=".Activity.DealsActivity" />
+        <activity android:name=".Activity.CartActivity"></activity>
     </application>
 
 </manifest>

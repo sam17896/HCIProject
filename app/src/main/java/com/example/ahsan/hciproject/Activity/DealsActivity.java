@@ -46,7 +46,7 @@ public class DealsActivity extends AppCompatActivity {
         adapter.addFragment(new Desserts());
         adapter.addFragment(new Beverages());
         adapter.addFragment(new SideLines());
-       
+
         ViewPager viewPager = findViewById(R.id.container);
         viewPager.setAdapter(adapter);
 
