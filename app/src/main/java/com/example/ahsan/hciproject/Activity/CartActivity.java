@@ -69,6 +69,11 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
          * method make volley network call and parses json
          */
     private void prepareCart() {
+        cartList.add(new CartItem(1,"Salmon Teriyaki","Roasted salon dumped in soa sauce and mint",140,"https://api.androidhive.info/images/food/1.jpg"));
+        cartList.add(new CartItem(2,"Grilled Mushroom and Vegetables","Spcie grills mushrooms, cucumber, apples and lot more",150,"https://api.androidhive.info/images/food/2.jpg"));
+        cartList.add(new CartItem(3,"Chicken Overload Meal","Grilled chicken & tandoori chicken in masala curry",185,"https://api.androidhive.info/images/food/3.jpg"));
+        cartList.add(new CartItem(4,"Chinese Egg Fry","Exotic eggs Fried served steaming hot",250,"https://api.androidhive.info/images/food/4.jpg"));
+        cartList.add(new CartItem(5,"Chicken Wraps","Grilled chicken tikka rool wrapped",140,"https://api.androidhive.info/images/food/5.jpg"));
 
     }
 
@@ -106,10 +111,5 @@ public class CartActivity extends AppCompatActivity implements RecylerItemTouchH
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds cartList to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
+
 }

@@ -13,6 +13,14 @@ public class CartItem {
     public CartItem() {
     }
 
+    public CartItem(int id, String name, String description, double price, String thumbnail) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.thumbnail = thumbnail;
+    }
+
     public int getId() {
         return id;
     }

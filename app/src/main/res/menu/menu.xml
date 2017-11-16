@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.daimajia.slider.demo.MainActivity" >
-    <item android:id="@+id/action_custom_indicator"
+    <item android:id="@+id/action_cart"
         android:title="Cart"
         android:icon="@drawable/ic_cart"
         android:orderInCategory="100"

@@ -88,4 +88,24 @@ public class BannerSliderActivity extends AppCompatActivity{
         UniversalImageLoader universalImageLoader = new UniversalImageLoader(this);
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds cartList to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.action_cart:
+                Intent intent = new Intent(this, CartActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
