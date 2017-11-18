@@ -25,6 +25,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.example.ahsan.hciproject.Fragment.Home;
+import com.example.ahsan.hciproject.Fragment.Map;
 import com.example.ahsan.hciproject.util.BottomNavigationViewHelper;
 import com.example.ahsan.hciproject.util.ChildAnimationExample;
 import com.example.ahsan.hciproject.R;
@@ -76,6 +77,16 @@ public class BannerSliderActivity extends AppCompatActivity{
                         Menu menu1 = bottomNavigationViewEx.getMenu();
                         MenuItem menuItem1 =  menu1.getItem(1);
                         menuItem1.setChecked(true);
+                        return true;
+                    case R.id.ic_circle:
+                        setTitle("Track Order");
+                        Fragment Map =  new Map();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction2 =  getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction2.replace(R.id.fra, Map,"Menu").commit();
+
+                        Menu menu2 = bottomNavigationViewEx.getMenu();
+                        MenuItem menuItem2 =  menu2.getItem(2);
+                        menuItem2.setChecked(true);
                         return true;
 
                 }
