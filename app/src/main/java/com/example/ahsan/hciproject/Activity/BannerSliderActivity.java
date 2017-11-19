@@ -24,6 +24,7 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.example.ahsan.hciproject.Fragment.Auth;
 import com.example.ahsan.hciproject.Fragment.Home;
 import com.example.ahsan.hciproject.Fragment.Map;
 import com.example.ahsan.hciproject.util.BottomNavigationViewHelper;
@@ -87,6 +88,16 @@ public class BannerSliderActivity extends AppCompatActivity{
                         Menu menu2 = bottomNavigationViewEx.getMenu();
                         MenuItem menuItem2 =  menu2.getItem(2);
                         menuItem2.setChecked(true);
+                        return true;
+                    case R.id.ic_alert:
+                        setTitle("Authentication");
+                        Fragment Auth =  new Auth();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction3 =  getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction3.replace(R.id.fra, Auth,"Auth").commit();
+
+                        Menu menu3 = bottomNavigationViewEx.getMenu();
+                        MenuItem menuItem3 =  menu3.getItem(3);
+                        menuItem3.setChecked(true);
                         return true;
 
                 }
