@@ -9,11 +9,21 @@ public class Item {
     String image_url;
     String name;
     String price;
+    boolean isBottle;
 
-    public Item(String image_url, String name, String price) {
+    public boolean isBottle() {
+        return isBottle;
+    }
+
+    public void setBottle(boolean bottle) {
+        isBottle = bottle;
+    }
+
+    public Item(String image_url, String name, String price, boolean isBottle) {
         this.image_url = image_url;
         this.name = name;
         this.price = price;
+        this.isBottle = isBottle;
     }
 
     public String getImage_url() {

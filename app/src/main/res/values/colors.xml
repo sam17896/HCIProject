@@ -15,10 +15,11 @@
     <color name="item_name">#535353</color>
     <color name="description">#a9a9a9</color>
 
-    <color name="primary">#E43F3F</color>
-    <color name="primary_dark">#E12929</color>
+    <color name="primary">#a3445d</color>
+    <color name="primary_dark">#8d2d56</color>
     <color name="primary_darker">#CC1D1D</color>
     <color name="accent">#FFFFFF</color>
+    <color name="bk">#fff</color>
 
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>

@@ -12,8 +12,7 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- if you want to load images from a file OR from the internet -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -27,7 +26,8 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
+            android:value="@string/google_maps_key" />
+
         <activity android:name=".Activity.BannerSliderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,8 @@
         </activity>
         <activity android:name=".Activity.MenuActivity" />
         <activity android:name=".Activity.DealsActivity" />
-        <activity android:name=".Activity.CartActivity"></activity>
+        <activity android:name=".Activity.CartActivity" />
+        <activity android:name=".Activity.DealItemList"></activity>
     </application>
 
 </manifest>

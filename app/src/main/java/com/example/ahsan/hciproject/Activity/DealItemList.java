@@ -1,22 +1,17 @@
-package com.example.ahsan.hciproject.Fragment;
+package com.example.ahsan.hciproject.Activity;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridView;
+import android.widget.ImageView;
 
-import com.example.ahsan.hciproject.Activity.DealItemList;
-import com.example.ahsan.hciproject.Adapter.GridImageAdapter;
+import com.example.ahsan.hciproject.Adapter.DealItemAdapter;
 import com.example.ahsan.hciproject.Adapter.ItemAdapter;
 import com.example.ahsan.hciproject.R;
-import com.example.ahsan.hciproject.entity.Deal;
 import com.example.ahsan.hciproject.entity.DealItem;
 import com.example.ahsan.hciproject.entity.Item;
 import com.example.ahsan.hciproject.util.RecycletItemClickListener;
@@ -25,22 +20,18 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 
-/**
- * Created by AHSAN on 11/15/2017.
- */
+public class DealItemList extends AppCompatActivity {
 
-public class Beverages  extends Fragment {
-
-    private RecyclerView recycler_view;
-    @Nullable
+    ImageView imageView;
+    RecyclerView recyclerView;
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.deal_view, container, false);
-        recycler_view = view.findViewById(R.id.recycler_view);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_deal_item_list);
+        recyclerView = findViewById(R.id.container);
         initImageLoader();
         tempGridSetup();
 
-        return view;
     }
     private void tempGridSetup(){
         ArrayList<DealItem> dealItems = new ArrayList<>();
@@ -63,32 +54,21 @@ public class Beverages  extends Fragment {
 //        deals.add(new Deal("deal11","https://i.redd.it/89cjkojkl10z.jpg"));
 //        deals.add(new Deal("deal12","https://i.redd.it/aw7pv8jq4zzy.jpg"));
 //
-        setupImageGrid(dealItems);
+        setupImageGrid(items);
 
     }
 
-    private void setupImageGrid(ArrayList<DealItem> imgURLs){
-        ItemAdapter mAdapter = new ItemAdapter(imgURLs);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext().getApplicationContext());
-        recycler_view.setLayoutManager(mLayoutManager);
-        recycler_view.setItemAnimator(new DefaultItemAnimator());
-        recycler_view.setAdapter(mAdapter);
-        recycler_view.addOnItemTouchListener(new RecycletItemClickListener(getContext(), recycler_view ,new RecycletItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(getContext(),DealItemList.class);
-                        startActivity(intent);
-                    }
+    private void setupImageGrid(ArrayList<Item> imgURLs){
+        DealItemAdapter mAdapter = new DealItemAdapter(imgURLs,this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this.getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
 
-                    @Override public void onLongItemClick(View view, int position) {
-                        // do whatever
-                    }
-                })
-        );
     }
 
     private void initImageLoader(){
-        UniversalImageLoader universalImageLoader = new UniversalImageLoader(getContext());
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(this);
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
-
 }

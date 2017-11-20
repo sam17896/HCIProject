@@ -1,5 +1,6 @@
 package com.example.ahsan.hciproject.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ahsan.hciproject.Activity.DealItemList;
 import com.example.ahsan.hciproject.Adapter.ItemAdapter;
 import com.example.ahsan.hciproject.R;
 import com.example.ahsan.hciproject.entity.DealItem;
 import com.example.ahsan.hciproject.entity.Item;
+import com.example.ahsan.hciproject.util.RecycletItemClickListener;
 import com.example.ahsan.hciproject.util.UniversalImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -39,10 +42,10 @@ public class ValueMeals  extends Fragment {
     private void tempGridSetup(){
         ArrayList<DealItem> dealItems = new ArrayList<>();
         ArrayList<Item> items = new ArrayList<>();
-        items.add(new Item("https://static.pexels.com/photos/5938/food-salad-healthy-lunch.jpg","Food 1","567"));
-        items.add(new Item("https://static.pexels.com/photos/76093/pexels-photo-76093.jpeg","Food 2","600"));
-        items.add(new Item("https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg","Food 3","563"));
-        items.add(new Item("https://static.pexels.com/photos/376464/pexels-photo-376464.jpeg","Food 4","567"));
+        items.add(new Item("https://static.pexels.com/photos/5938/food-salad-healthy-lunch.jpg","Food 1","567",false));
+        items.add(new Item("https://static.pexels.com/photos/76093/pexels-photo-76093.jpeg","Food 2","600",false));
+        items.add(new Item("https://static.pexels.com/photos/70497/pexels-photo-70497.jpeg","Food 3","563",false));
+        items.add(new Item("https://static.pexels.com/photos/376464/pexels-photo-376464.jpeg","Food 4","567",true));
 //
         dealItems.add(new DealItem("https://pbs.twimg.com/profile_images/616076655547682816/6gMRtQyY.jpg","Deal1",items,"657"));
         dealItems.add(new DealItem("https://i.redd.it/9bf67ygj710z.jpg","Deal2",items,"657"));
@@ -67,7 +70,17 @@ public class ValueMeals  extends Fragment {
         recycler_view.setLayoutManager(mLayoutManager);
         recycler_view.setItemAnimator(new DefaultItemAnimator());
         recycler_view.setAdapter(mAdapter);
+        recycler_view.addOnItemTouchListener(new RecycletItemClickListener(getContext(), recycler_view ,new RecycletItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getContext(),DealItemList.class);
+                        startActivity(intent);
+                    }
 
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
     }
 
     private void initImageLoader(){

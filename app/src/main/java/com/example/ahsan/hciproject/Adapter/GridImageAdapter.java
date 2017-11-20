@@ -72,7 +72,6 @@ public class GridImageAdapter extends ArrayAdapter<Deal> {
 
         ImageLoader imageLoader = ImageLoader.getInstance();
         holder.name.setText(deal.getName());
-        Toast.makeText(mContext, deal.getName(), Toast.LENGTH_SHORT).show();
 
         imageLoader.displayImage(mAppend + deal.getImageUrl(), holder.image, new ImageLoadingListener() {
             @Override
